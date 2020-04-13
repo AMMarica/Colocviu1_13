@@ -83,7 +83,12 @@ public class Colocviu1_13MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
         if (requestCode == 2020) {
-            Toast.makeText(this, "The activity returned with result " + resultCode, Toast.LENGTH_LONG).show();
+            if (resultCode == 0) {
+                Toast.makeText(this, "CANCEL pressed ", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "REGISTER pressed ", Toast.LENGTH_LONG).show();
+            }
+
             commands.setText("");
             pressButtons = 0;
         }
